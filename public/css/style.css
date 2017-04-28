@@ -1,3 +1,13 @@
+@font-face {
+	font-family: 'Sunny';
+	src: url('../assets/fonts/Sunny Spring Day - TTF.ttf');
+}
+
+@font-face {
+	font-family: 'OpenSans';
+	src: url('../assets/fonts/OpenSans-Regular.ttf');
+}
+
 #loading {
 	text-align: center;
 	padding-top: 200px;
@@ -10,7 +20,7 @@
 	left: 20%;
 	color: darkorange;
 	font-weight: bold;
-	text-shadow: -1px 1px #353744;
+	text-shadow: -2px 2px #353744;
 }
 
 ul li {
@@ -64,6 +74,7 @@ ul li {
 .nav-colapse-btn {
 	margin-top: 15px;
 	background-color: #353744;
+	z-index: 3;
 }
 
 
