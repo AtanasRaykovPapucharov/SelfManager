@@ -2,12 +2,26 @@
 
 const userCtrl = (() => {
 	class UserCtrl {
+		showSignIn() {
+			view.signin('#content-aside', {})
+		}
+
+		showSignUp() {
+			view.signup('#content-aside', {})
+		}
+
+		showCategories() {
+			data.getCategories()
+				.then((categories) => {
+					view.categories('#content-aside', { data: categories.result })
+				})
+		}
 
 		signOut() {
 			localStorage.clear();
 			$('#log-forms-link').html('Sign in / Sign up').attr('href', '#/signin');
 			$('#user-name-view').html('');
-			notifier.warningNo(`Bye, bye!`);
+			notifier.info(`Bye, bye!`);
 		}
 
 		signIn() {
@@ -45,11 +59,9 @@ const userCtrl = (() => {
 							$('#user-name-view').html(username);
 
 							notifier.success(`Welcome, ${username}!`);
-							return true;
 						})
 						.catch((err) => {
 							notifier.error(`No such a user!`);
-							return false;
 						})
 				}
 			})();
@@ -98,12 +110,10 @@ const userCtrl = (() => {
 							respUser.password = '';
 
 							notifier.success('You are registered successfully!');
-							return true;
 						})
 						.catch((err) => {
 							console.log('Server error: ' + err);
 							notifier.error('This username already exists!');
-							return false;
 						})
 				}
 			}

@@ -14,23 +14,13 @@ const data = (() => {
 		//================================================//
 
 		getCategories() {
-			let options = {
-				headers: {
-					['x-auth-key']: localStorage.getItem('authKey')
-				}
-			};
-			return requester.get('/api/categories', options);
+			return requester.get('/api/categories');
 		}
 
 		//================================================//
 
 		getEvents() {
-			let options = {
-				headers: {
-					['x-auth-key']: localStorage.getItem('authKey')
-				}
-			};
-			return requester.get('/api/events', options);
+			return requester.get('/api/events');
 		}
 
 		postEvents(user) {
@@ -40,12 +30,7 @@ const data = (() => {
 		//================================================//
 
 		getTodos() {
-			let options = {
-				headers: {
-					['x-auth-key']: localStorage.getItem('authKey')
-				}
-			};
-			return requester.get(`/api/todos`, options);
+			return requester.get(`/api/todos`);
 		}
 
 		getTodoById(id) {

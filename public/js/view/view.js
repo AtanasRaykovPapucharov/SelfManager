@@ -33,6 +33,8 @@ const view = (() => {
 			templateLoader.load(selector, template, data);
 		}
 
+		//================================================//
+		
 		home(selector, data) {
 			const template = this.templatesPath + 'home.html';
 			templateLoader.load(selector, template, data);
@@ -45,6 +47,23 @@ const view = (() => {
 
 		events(selector, data) {
 			const template = this.templatesPath + 'events.html';
+			templateLoader.load(selector, template, data);
+		}
+
+		//================================================//
+		
+		addTodo(selector, data) {
+			const template = this.templatesPath + 'add-todo.html';
+			templateLoader.load(selector, template, data);
+		}
+
+		addEvent(selector, data) {
+			const template = this.templatesPath + 'add-event.html';
+			templateLoader.load(selector, template, data);
+		}
+
+		singleTodo(selector, data) {
+			const template = this.templatesPath + 'single-todo.html';
 			templateLoader.load(selector, template, data);
 		}
 	}

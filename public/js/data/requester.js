@@ -6,7 +6,7 @@ const requester = (() => {
 			options = options || {};
 			data = data || {};
 
-			const headers = options.headers || {},
+			const headers = options.headers || { ['x-auth-key']: localStorage.getItem('authKey') },
 				contentType = options.contentType || 'application/json';
 
 			const promise = new Promise((resolve, reject) => {

@@ -7,55 +7,86 @@ const mainCtrl = (() => {
 		}
 
 		showTodos() {
-			if (!localStorage.getItem('username')) {
-				notifier.warningNo('Please, sign in!');
-				return;
-			}
-
-			data.getTodos()
-				.then((todos) => {
-					if (todos.result.length === 0) {
-						notifier.warningNo('You have no TODOs!');
+			let todoz = (() => {
+				return () => {
+					if (!localStorage.getItem('username')) {
+						notifier.warningNo('Please, sign in!');
+						return;
 					}
-					view.todos('#content', { data: todos.result })
+					data.getTodos()
+						.then((todos) => {
+							if (todos.result.length === 0) {
+								notifier.warningNo('You have no TODOs!');
+							}
+							view.todos('#content', { data: todos.result })
+						})
+						.catch((err) => {
+							console.log(err);
+						})
+				}
+			})();
+
+			todoz();
+
+			$('#todoz').on('click', () => {
+				todoz();
+			})
+		}
+
+		singleTodo(id) {
+			data.getTodoById(id)
+				.then((todo) => {
+					view.singleTodo('#content', { data: todo.result })
 				})
 				.catch((err) => {
 					console.log(err);
 				})
+		}
+
+		addTodo() {
+			view.addTodo('#content', {});
+
+			$('.btn #add-todo-btn').on('click', () => {
+				let todoObj = {
+					category: $('#add-todo-category').html(),
+					text: $('#add-todo-text').html(),
+					state: $('#add-todo-state').html()
+				}
+				console.log(todoObj);
+			})
 		}
 
 		showEvents() {
-			if (!localStorage.getItem('username')) {
-				notifier.warningNo('Please, sign in!');
-				return;
-			}
-
-			data.getEvents()
-				.then((events) => {
-					if (events.result.length === 0) {
-						notifier.warningNo('You have no EVENTs!');
+			let eventz = (() => {
+				return () => {
+					if (!localStorage.getItem('username')) {
+						notifier.warningNo('Please, sign in!');
+						return;
 					}
-					view.events('#content', { data: events.result })
-				})
-				.catch((err) => {
-					console.log(err);
-				})
+					data.getEvents()
+						.then((events) => {
+							if (events.result.length === 0) {
+								notifier.info('You have no EVENTs!');
+							}
+							view.events('#content', { data: events.result })
+						})
+						.catch((err) => {
+							console.log(err);
+						})
+				}
+			})();
+
+			eventz();
+
+			$('#eventz').on('click', () => {
+				eventz();
+			})
 		}
 
-		showSignIn() {
-			view.signin('#content-aside', {})
+		addEvent() {
+			return view.addEvent('#content', {});
 		}
 
-		showSignUp() {
-			view.signup('#content-aside', {})
-		}
-
-		showCategories() {
-			data.getCategories()
-				.then((categories) => {
-					view.categories('#content-aside', {data: categories.result})
-				})
-		}
 	}
 
 	let newCtrl = new MainCtrl();

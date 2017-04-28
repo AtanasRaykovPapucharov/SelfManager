@@ -15,7 +15,7 @@ const validator = (() => {
 			let letters = this.constantz.emailReg;
 
 			if (!email || !email.match(letters)) {
-				notifier.error('E-mail must consist of letters and numbers, dot, symbol @ ');
+				notifier.error('E-mail must consist of (letters, numbers, dot and symbol @) ');
 				return false;
 			}
 			return true;
@@ -25,7 +25,7 @@ const validator = (() => {
 			let letters = this.constantz.passwordReg;
 
 			if (!password || !password.match(letters)) {
-				notifier.error('Password must contain at least 6 characters, including UPPER/lowercase and numbers');
+				notifier.error('Password must contain at least ( <br>6 characters: UPPERCASE, lowercase and Numbers )');
 				return false;
 			}
 			return true;

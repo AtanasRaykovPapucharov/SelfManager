@@ -6,35 +6,55 @@ const router = {
 			.on({
 				'/home': () => {
 					mainCtrl.showHome();
-					mainCtrl.showCategories();
+					hasUser().then((hasUser) => {
+						if (hasUser) {
+							userCtrl.showCategories();
+						}
+					})
 				},
 				'/todos': () => {
 					mainCtrl.showTodos();
-					mainCtrl.showCategories();
+					hasUser().then((hasUser) => {
+						if (hasUser) {
+							userCtrl.showCategories();
+						}
+					})
 				},
 				'/events': () => {
 					mainCtrl.showEvents();
-					mainCtrl.showCategories();
+					hasUser().then((hasUser) => {
+						if (hasUser) {
+							userCtrl.showCategories();
+						}
+					})
 				},
 				'/signin': () => {
-					mainCtrl.showSignIn();
+					userCtrl.showSignIn();
 				},
 				'/signup': () => {
-					mainCtrl.showSignUp();
+					userCtrl.showSignUp();
 				},
 				'/signout': () => {
 					userCtrl.signOut();
-				},
-				'/signin-send': () => {
-					userCtrl.signIn();
 					appRouter.navigate('/home');
 				},
+				'/signin-send': () => {
+					appRouter.navigate('/home');
+					userCtrl.signIn();
+				},
 				'/signup-send': () => {
-					userCtrl.signUp();
 					appRouter.navigate('/signin');
+					userCtrl.signUp();
 				},
 				'/add-todo': () => {
-
+					mainCtrl.addTodo();
+				},
+				'/add-event': () => {
+					mainCtrl.addEvent();
+				},
+				'/todo/:id': (params) => {
+					let todoId = params.id;
+					mainCtrl.singleTodo(todoId);
 				},
 				'/': () => {
 					appRouter.navigate('/home');
