@@ -1,0 +1,15 @@
+<div class="todos-container">
+	{{#each data}}
+	<div class="todo" >
+		<h3>Category: {{this.caregory}}</h3>
+		{{#if this.state}}
+		<h4>State: Done</h4>
+		{{/if}}
+		{{#unless this.state}}
+		<h4>State: Waiting</h4>
+		{{/unless}}
+		<p>TODO: {{this.text}}</p>
+	</div>
+	{{/each}}
+	<a href="#/add-todo" class="btn btn-info">Add TODO</a>
+</div>
