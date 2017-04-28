@@ -43,16 +43,38 @@ const mainCtrl = (() => {
 				})
 		}
 
-		addTodo() {
+		showAddTodo() {
 			view.addTodo('#content', {});
+		}
 
-			$('.btn #add-todo-btn').on('click', () => {
-				let todoObj = {
-					category: $('#add-todo-category').html(),
-					text: $('#add-todo-text').html(),
-					state: $('#add-todo-state').html()
+		addTodo() {
+			let adding = (() => {
+				return () => {
+					let todoObj = {
+						category: $('#add-todo-category').val(),
+						text: $('#add-todo-text').val(),
+						state: $('#add-todo-state').val()
+					}
+					
+					$('#add-todo-category').val('');
+					$('#add-todo-text').val('');
+
+					data.postTodos(todoObj)
+						.then((resp) => {
+							if (resp) {
+								notifier.success('TODO added successfully!');
+							}
+						})
+						.catch((err) => {
+							console.log(err);
+						});
 				}
-				console.log(todoObj);
+			})();
+
+			adding();
+
+			$('.btn#add-todo-btn').on('click', () => {
+				adding();
 			})
 		}
 
@@ -83,7 +105,7 @@ const mainCtrl = (() => {
 			})
 		}
 
-		addEvent() {
+		showAddEvent() {
 			return view.addEvent('#content', {});
 		}
 

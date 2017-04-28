@@ -47,10 +47,14 @@ const router = {
 					userCtrl.signUp();
 				},
 				'/add-todo': () => {
+					mainCtrl.showAddTodo();
+				},
+				'/add-todo-btn': () => {
 					mainCtrl.addTodo();
+					appRouter.navigate('/todos');
 				},
 				'/add-event': () => {
-					mainCtrl.addEvent();
+					mainCtrl.showAddEvent();
 				},
 				'/todo/:id': (params) => {
 					let todoId = params.id;
