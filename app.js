@@ -25,6 +25,10 @@ app.use('/api/categories', categoriesRouter);
 
 var port = process.env.PORT || 3013;
 
-app.listen(port, function() {
+app.listen(port, function () {
   console.log('Server is running at http://localhost:' + port);
 });
+
+if (require('openurl')) {
+  require('openurl').open('http://localhost:' + port);
+}

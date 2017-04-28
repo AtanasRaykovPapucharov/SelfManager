@@ -2,10 +2,11 @@
 	{{#each data}}
 	<a href="#/todo/{{this.id}}">
 		<div class="todo">
-			<h5>Category: <br> {{this.caregory}}</h5>
+			<h5>Category: <br> {{this.category}}</h5>
 			{{#if this.state}}
 			<h4>State: Done</h4>
-			{{/if}} {{#unless this.state}}
+			{{/if}} 
+			{{#unless this.state}}
 			<h4>State: Waiting</h4>
 			{{/unless}}
 			<p>TODO: {{this.text}}</p>

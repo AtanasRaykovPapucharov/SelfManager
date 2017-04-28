@@ -89,51 +89,22 @@
       "events": [],
       "todos": [
         {
-          "id": 27882,
-          "text": "qwe",
+          "id": 229198,
+          "text": "Have to go shopping.",
           "state": true,
-          "category": "Home"
+          "category": "Free time"
         },
         {
-          "id": 365117,
-          "text": "NEW TODO",
-          "state": false,
-          "category": "Home"
+          "id": 312940,
+          "text": "go out of Sofia",
+          "state": true,
+          "category": "weekend"
         },
         {
-          "id": 334668,
-          "state": false,
-          "category": "uncategorized"
-        },
-        {
-          "id": 345395,
-          "state": false,
-          "category": "uncategorized"
-        },
-        {
-          "id": 378906,
-          "state": false,
-          "category": "uncategorized"
-        },
-        {
-          "id": 532705,
-          "state": false,
-          "category": "uncategorized"
-        },
-        {
-          "id": 562679,
-          "state": false,
-          "category": "uncategorized"
-        },
-        {
-          "id": 604007,
-          "state": false,
-          "category": "uncategorized"
-        },
-        {
-          "id": 610547,
-          "state": false,
-          "category": "uncategorized"
+          "id": 385729,
+          "text": "sadasas",
+          "state": true,
+          "category": "Fun"
         }
       ]
     },

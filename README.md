@@ -1,5 +1,9 @@
 # Academy Self Manager - JavaScript Applications Sample Exam
 
+###  To install node and bower modules: **npm install**
+
+###  To run app: **npm start**
+
 ##  Description:
 
 Implement a SPA application for creating TODOs and scheduling events

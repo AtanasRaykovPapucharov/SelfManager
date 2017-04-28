@@ -1,15 +1,12 @@
-<div>
+<div class="events-container-wrapper">
 	{{#each data}}
-	<div style="border: 2px solid black">
-		<h1>{{this.title}}</h1>
+	<div class="eve" style="border: 2px solid gray; margin-bottom: 10px; padding: 10px;">
+		<h1>Title: {{this.title}}</h1>
+		Description:
 		<p>{{this.description}}</p>
-		<h3>{{this.caregory}}</h3>
-		<h4>{{this.date}}</h4>
-		<ul>
-			{{#each this.users}}
-			<li>{{this}}</li>
-			{{/each}}
-		</ul>
+		<h3>Category: {{this.category}}</h3>
+		<h3>Creator: {{this.creator}}</h3>
+		<h4>Date:{{this.date}}</h4>
 	</div>
 	{{/each}}
 	<a href="#/add-event" class="btn btn-info">Add Event</a>

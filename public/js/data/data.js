@@ -23,8 +23,8 @@ const data = (() => {
 			return requester.get('/api/events');
 		}
 
-		postEvents(user) {
-			return requester.post('/api/events');
+		postEvents(event) {
+			return requester.post('/api/events', event);
 		}
 
 		//================================================//
@@ -37,8 +37,8 @@ const data = (() => {
 			return requester.put(`/api/todos/${id}`);
 		}
 
-		postTodos(user) {
-			return requester.post('/api/todos');
+		postTodos(todo) {
+			return requester.post('/api/todos', todo);
 		}
 	}
 

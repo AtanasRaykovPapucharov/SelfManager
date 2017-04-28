@@ -39,12 +39,12 @@ const router = {
 					appRouter.navigate('/home');
 				},
 				'/signin-send': () => {
-					appRouter.navigate('/home');
 					userCtrl.signIn();
+					appRouter.navigate('/home');
 				},
 				'/signup-send': () => {
-					appRouter.navigate('/signin');
 					userCtrl.signUp();
+					appRouter.navigate('/signin');
 				},
 				'/add-todo': () => {
 					mainCtrl.showAddTodo();
@@ -55,6 +55,10 @@ const router = {
 				},
 				'/add-event': () => {
 					mainCtrl.showAddEvent();
+				},
+				'/add-event-btn': () => {
+					mainCtrl.addEvent();
+					appRouter.navigate('/events');
 				},
 				'/todo/:id': (params) => {
 					let todoId = params.id;
