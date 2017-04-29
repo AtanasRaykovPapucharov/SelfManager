@@ -15,10 +15,12 @@ const mainCtrl = (() => {
 					}
 					data.getTodos()
 						.then((todos) => {
-							if (todos.result.length === 0) {
+							if (todos.result) {
+								view.todos('#content', { data: todos.result });
+							} else {
+								view.todos('#content', {});
 								notifier.info('You have no TODOs!');
 							}
-							view.todos('#content', { data: todos.result })
 						})
 						.catch((err) => {
 							console.log(err);
@@ -88,10 +90,12 @@ const mainCtrl = (() => {
 					}
 					data.getEvents()
 						.then((events) => {
-							if (events.result.length === 0) {
+							if (events.result) {
+								view.events('#content', { data: events.result })
+							} else {
+								view.events('#content', {})
 								notifier.info('You have no EVENTs!');
 							}
-							view.events('#content', { data: events.result })
 						})
 						.catch((err) => {
 							console.log(err);
@@ -116,14 +120,8 @@ const mainCtrl = (() => {
 					let eventObj = {
 						category: $('#add-event-category').val(),
 						title: $('#add-event-title').val(),
-						description: $('#add-event-description').val(),
-						date: new Date(),
-						users: []
+						description: $('#add-event-description').val()
 					}
-
-					$('#add-event-category').val('');
-					$('#add-event-text').val('');
-					$('#add-event-description').val('');
 
 					data.postEvents(eventObj)
 						.then((resp) => {
@@ -135,6 +133,10 @@ const mainCtrl = (() => {
 							console.log(err);
 							notifier.error('EVENT cannot be added!');
 						});
+
+					$('#add-event-category').val('');
+					$('#add-event-text').val('');
+					$('#add-event-description').val('');
 				}
 			})();
 

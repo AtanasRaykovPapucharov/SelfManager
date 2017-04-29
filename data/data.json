@@ -86,7 +86,19 @@
       "usernameLower": "brado",
       "authKey": "undefinedUYBJMWsjuC_FaUSuLabdJssAL_ld(N+gVohC@%MpAvoKEv^LG&P",
       "id": "0a61b698-d482-4fae-a44d-1bbf56442bf9",
-      "events": [],
+      "events": [
+        {
+          "id": 179286,
+          "title": "New event",
+          "category": "Blues",
+          "description": "Neshto si...",
+          "date": null,
+          "creatorId": "0a61b698-d482-4fae-a44d-1bbf56442bf9",
+          "users": [
+            "0a61b698-d482-4fae-a44d-1bbf56442bf9"
+          ]
+        }
+      ],
       "todos": [
         {
           "id": 229198,
@@ -123,6 +135,44 @@
       "usernameLower": "wasterapirautpong",
       "authKey": "undefined@%*d=pE%vBSEiFjHR^QJxFNsU@^oorBNDRlmpWJbx&tu!HLyBYt",
       "id": "e98d055e-0c2e-4a4b-b0c4-3b2b6a58b8da"
+    },
+    {
+      "email": "pich@ff.mm",
+      "username": "pich",
+      "password": "841fbbc75257a63d73c1b3bcf37b6a76",
+      "usernameLower": "pich",
+      "authKey": "undefinedFH%L(Jw)gDkUVJ_WF)UU-uIZ&sFkk-#!I&KK+nu^)Qt)wx$M$GV",
+      "id": "39643c2f-dbc7-4d12-a951-2fcc94c3db84",
+      "events": [],
+      "todos": [
+        {
+          "id": 129043,
+          "text": "Have to bye a soap",
+          "state": true,
+          "category": "Shoping"
+        }
+      ]
+    },
+    {
+      "email": "dude@gmail.vom",
+      "username": "dude",
+      "password": "983dab417d4e34f1436ac52cf914a413",
+      "usernameLower": "dude",
+      "authKey": "undefinedGqLy+si+Tuqgz%Aig)W@nng-qeq!zTTAR=GPyM+YLgcxvcfj))u",
+      "id": "6dad445b-96ed-4749-bdda-a9ff860ee0f3",
+      "events": [
+        {
+          "id": 100451,
+          "title": "sasa",
+          "category": "sadsdasd",
+          "description": "sadas",
+          "date": null,
+          "creatorId": "6dad445b-96ed-4749-bdda-a9ff860ee0f3",
+          "users": [
+            "6dad445b-96ed-4749-bdda-a9ff860ee0f3"
+          ]
+        }
+      ]
     }
   ]
 }
