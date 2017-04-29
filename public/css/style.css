@@ -64,7 +64,11 @@ ul li {
 }
 
 #navbar-links .nav-right li .main-link:hover, #navbar-links .nav-right li .main-link.auth:hover {
-	color: darkgrey;
+	color: darkorange;
+}
+
+#navbar-links .nav-right li .main-link:focus, #navbar-links .nav-right li .main-link.auth:focus {
+	color: darkorange;
 }
 
 #navbar-links .nav-right li .main-link.auth {
